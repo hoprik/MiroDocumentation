@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..//style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            
+                <h1>Documentation</h1>
+                <a href="../index.html" class="button">Главное</a>
+                <a href="../about.html" class="button">О движке</a>
+                <a href="../use.html" class="button">Демонстрация</a>
+                <button class="button apiShows">Api</button>
+                <div class="apiShowWrapper">
+                    <a href="../api/execute.html" class="button">Executer</a>
+                    <a href="../api/hero.html" class="button">Hero</a>
+                    <a href="../api/dialogs.html" class="button">Диалоги</a>
+                    <a href="../api/storyf.html" class="button">Story Functions</a>
+
+                    <a href="../api/buildings.html" class="button">Постройки</a>
+                    <a href="../api/prewiw.html" class="button">Пример</a>
+                </div>
+
+                <button class="tudi">Бархатные тяги</button>
+        </div>
+        <div class="main">
+                <h1 class="mainHEAD">Перевод постройки nbt в java</h1>
+                <p class="aboutEngine">
+                    Пример кода, если посмотрели как оно работает:
+                    <div class="code">
+                        @Mod.EventBusSubscriber(modid = StoryMod.MODID) <br>
+                        public class HoprikTest { <br>
+                            &nbsp;static boolean cooldown = false; <br>
+                            &nbsp;static Player player; <br>
+                            &nbsp;static Dialog dialog = new Dialog("Привет я нечто то заспавнит моба. Хочешь?", new Bench[]{ <br>
+                                &nbsp;&nbsp;        new Bench("Да", <br>
+                                &nbsp;&nbsp;&nbsp;            new Dialog(1, (Serializable & Runnable) ()->{ <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;                yes(); <br>
+                                    &nbsp;&nbsp;})), <br>
+                                    &nbsp;&nbsp;new Bench("Нет", <br>
+                                    &nbsp;&nbsp;&nbsp;new Dialog(2, (Serializable & Runnable) () -> { <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;no(); <br>
+                                        &nbsp;&nbsp;}))}); <br>
+                            @SubscribeEvent <br>
+                            public static void Test(BlockEvent.BreakEvent event){ <br>
+                                &nbsp;player = event.getPlayer(); <br>
+                                &nbsp;dialog.show(event.getPlayer()); <br>
+                            } <br>
+ <br>
+                            public static void yes(){ <br>
+                                &nbsp;Hero hero = new Hero(new NpcEntity(InitEntity.HOPRIK.get(), player.level), new BlockPos(0, -60, 0)); <br>
+                                &nbsp;hero.moveEntity(new Vector3d(9,-60,9), 0.4F); <br>
+                            } <br>
+ <br>
+                            public static void no(){ <br>
+                                &nbsp;Hero hero = new Hero(new NpcEntity(InitEntity.YBLEDOK.get(), player.level), new BlockPos(0, -60, 0)); <br>
+                                &nbsp;hero.moveEntity(new Vector3d(9,-60,9), 0.4F); <br>
+                            } <br>
+                            @SubscribeEvent <br>
+                            public static void interact(PlayerInteractEvent.EntityInteract event) { <br>
+                                &nbsp;if (event.getTarget() instanceof NpcEntity && !cooldown) { <br>
+                                    &nbsp;&nbsp;cooldown = true; <br>
+                                    &nbsp;&nbsp;Player player = event.getEntity(); <br>
+                                    &nbsp;&nbsp;StoryFunction.Message(player, "ZenHunT", "Я гей!"); <br>
+                                    &nbsp;&nbsp;Executer executer = new Executer(); <br>
+                                    &nbsp;&nbsp;executer.addS(() -> dialog.show(player), 2); <br>
+                                    &nbsp;&nbsp;executer.addS(() -> cooldown = false, 2); <br>
+                                    &nbsp;&nbsp;executer.exec(); <br>
+                                    &nbsp;&nbsp;} <br>
+                                    &nbsp;} <br>
+                        } <br>
+                    </div>
+                </p>
+        </div>
+    </div>
+    <script src="../index.js"></script>
+</body>
+
+</html>
