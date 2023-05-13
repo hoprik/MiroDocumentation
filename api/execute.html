@@ -55,22 +55,19 @@
                         </ul>
                     </p>
                     <p>
-                        <div class="code">
-                            //executer <br>
-<br>
-                            Executer executer = new Executer(); <br>
-                            executer.addS(() -> { StoryFunction.Message(event.getPlayer(), "бен", "салам"); }, 1); <br>
-                            executer.addS(() -> { StoryFunction.Message(event.getPlayer(), "бен", "1234"); }, 1);<br>
-                            executer.addS(() -> { StoryFunction.Message(event.getPlayer(), "бархатная тяг", "ага"); }, 0); <br>
-                            executer.exec();<br>
-<br>
-                            //executerButton <br>
-                            ExecuterButton executer = new ExecuterButton(); <br>
-                            executer.add(() -> { StoryFunction.Message(event.getPlayer(), "бен", "салам"); }); <br>
-                            executer.add(() -> { StoryFunction.Message(event.getPlayer(), "бен", "1234"); });<br>
-                            executer.add(() -> { StoryFunction.Message(event.getPlayer(), "бархатная тяг", "ага"); }); <br>
-                            executer.exec();<br>
-                        </div>  
+                        <pre class="language-java"><code class="language-java">//executer 
+Executer executer = new Executer(); 
+executer.addS(() -> { StoryFunction.Message(event.getPlayer(), "бен", "салам"); }, 1); 
+executer.addS(() -> { StoryFunction.Message(event.getPlayer(), "бен", "1234"); }, 1);
+executer.addS(() -> { StoryFunction.Message(event.getPlayer(), "бархатная тяг", "ага"); }, 0); 
+executer.exec();
+
+//executerButton
+ExecuterButton executer = new ExecuterButton(); 
+executer.add(() -> { StoryFunction.Message(event.getPlayer(), "бен", "салам"); }); 
+executer.add(() -> { StoryFunction.Message(event.getPlayer(), "бен", "1234"); });
+executer.add(() -> { StoryFunction.Message(event.getPlayer(), "бархатная тяг", "ага"); }); 
+executer.exec();</code></pre>
                 </p>
         </div>
     </div>

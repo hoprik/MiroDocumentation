@@ -54,16 +54,16 @@ function writeText(word, textFromArray){
     }
 }
 
-document.querySelector("button.apiShows").addEventListener("click", ()=>{
-    const showWrapper = document.querySelector(".apiShowWrapper")
-    let procentWidht = 0;
-    const idInterval = setInterval(()=>{
-        if (procentWidht <100){
-            procentWidht+=1;
-            showWrapper.setAttribute("style", `opacity:${procentWidht}%;`)
-        }
-    }, 0.1)
-})
+// document.querySelector("button.apiShows").addEventListener("click", ()=>{
+//     const showWrapper = document.querySelector(".apiShowWrapper")
+//     let procentWidht = 0;
+//     const idInterval = setInterval(()=>{
+//         if (procentWidht <100){
+//             procentWidht+=1;
+//             showWrapper.setAttribute("style", `opacity:${procentWidht}%;`)
+//         }
+//     }, 0.1)
+// })
 
 // document.querySelectorAll("a.transit").forEach(e=>{
 //     e.addEventListener("click", (event)=>{

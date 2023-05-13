@@ -34,49 +34,47 @@
                 <h1 class="mainHEAD">Перевод постройки NBT в java</h1>
                 <p class="aboutEngine">
                     Пример кода, если вы уже видели, как оно работает:
-                    <div class="code">
-                        @Mod.EventBusSubscriber(modid = StoryMod.MODID) <br>
-                        public class HoprikTest { <br>
-                            &nbsp;static boolean cooldown = false; <br>
-                            &nbsp;static Player player; <br>
-                            &nbsp;static Dialog dialog = new Dialog("Привет, я нечто то, что спавнит мобов. Оно тебе нужно?", new Bench[]{ <br>
-                                &nbsp;&nbsp;        new Bench("Да", <br>
-                                &nbsp;&nbsp;&nbsp;            new Dialog(1, (Serializable & Runnable) ()->{ <br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;                yes(); <br>
-                                    &nbsp;&nbsp;})), <br>
-                                    &nbsp;&nbsp;new Bench("Нет", <br>
-                                    &nbsp;&nbsp;&nbsp;new Dialog(2, (Serializable & Runnable) () -> { <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;no(); <br>
-                                        &nbsp;&nbsp;}))}); <br>
-                            @SubscribeEvent <br>
-                            public static void Test(BlockEvent.BreakEvent event){ <br>
-                                &nbsp;player = event.getPlayer(); <br>
-                                &nbsp;dialog.show(event.getPlayer()); <br>
-                            } <br>
- <br>
-                            public static void yes(){ <br>
-                                &nbsp;Hero hero = new Hero(new NpcEntity(InitEntity.HOPRIK.get(), player.level), new BlockPos(0, -60, 0)); <br>
-                                &nbsp;hero.moveEntity(new Vector3d(9,-60,9), 0.4F); <br>
-                            } <br>
- <br>
-                            public static void no(){ <br>
-                                &nbsp;Hero hero = new Hero(new NpcEntity(InitEntity.YBLEDOK.get(), player.level), new BlockPos(0, -60, 0)); <br>
-                                &nbsp;hero.moveEntity(new Vector3d(9,-60,9), 0.4F); <br>
-                            } <br>
-                            @SubscribeEvent <br>
-                            public static void interact(PlayerInteractEvent.EntityInteract event) { <br>
-                                &nbsp;if (event.getTarget() instanceof NpcEntity && !cooldown) { <br>
-                                    &nbsp;&nbsp;cooldown = true; <br>
-                                    &nbsp;&nbsp;Player player = event.getEntity(); <br>
-                                    &nbsp;&nbsp;StoryFunction.Message(player, "ZenHunT", "Я гей!"); <br>
-                                    &nbsp;&nbsp;Executer executer = new Executer(); <br>
-                                    &nbsp;&nbsp;executer.addS(() -> dialog.show(player), 2); <br>
-                                    &nbsp;&nbsp;executer.addS(() -> cooldown = false, 2); <br>
-                                    &nbsp;&nbsp;executer.exec(); <br>
-                                    &nbsp;&nbsp;} <br>
-                                    &nbsp;} <br>
-                        } <br>
-                    </div>
+                    <pre class="language-java"><code class="language-java">@Mod.EventBusSubscriber(modid = StoryMod.MODID)
+public class HoprikTest {
+    static boolean cooldown = false;
+    static Player player;
+    static Dialog dialog = new Dialog("Привет я нечто то заспавнит моба. Хочешь?", new Bench[]{
+            new Bench("Да",
+                    new Dialog(1, (Serializable & Runnable) ()->{
+                        yes();
+                    })),
+            new Bench("Нет",
+                    new Dialog(2, (Serializable & Runnable) () -> {
+                        no();
+                    }))});
+    @SubscribeEvent
+    public static void Test(BlockEvent.BreakEvent event){
+        player = event.getPlayer();
+        dialog.show(event.getPlayer());
+    }
+
+    public static void yes(){
+        Hero hero = new Hero(new NpcEntity(InitEntity.HOPRIK.get(), player.level), new BlockPos(0, -60, 0));
+        hero.moveEntity(new Vector3d(9,-60,9), 0.4F);
+    }
+
+    public static void no(){
+        Hero hero = new Hero(new NpcEntity(InitEntity.YBLEDOK.get(), player.level), new BlockPos(0, -60, 0));
+        hero.moveEntity(new Vector3d(9,-60,9), 0.4F);
+    }
+    @SubscribeEvent
+    public static void interact(PlayerInteractEvent.EntityInteract event) {
+        if (event.getTarget() instanceof NpcEntity && !cooldown) {
+            cooldown = true;
+            Player player = event.getEntity();
+            StoryFunction.Message(player, "ZenHunT", "Я гей!");
+            Executer executer = new Executer();
+            executer.addS(() -> dialog.show(player), 2);
+            executer.addS(() -> cooldown = false, 2);
+            executer.exec();
+        }
+    }
+}</code></pre>
                 </p>
         </div>
     </div>
