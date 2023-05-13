@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://hoprik.github.io/MiroDocumentation/style.css">
-    <title>Document</title>
+    <title>Диалоги</title>
 </head>
 
 <body>
@@ -35,17 +35,17 @@
         <div class="main">
                 <h1 class="mainHEAD">Hero</h1>
                 <p class="aboutEngine">
-                    Dialog - класс для работы с диалогами, содержит функции 
+                    Dialog - класс для работы с диалогами, который содержит функции 
                     <ul class="aboutWhatDoingEngine">
                         <li>show(Player (PlayerEntity - 1.16.5) player) - показать диалог игроку</li>
                     </ul>
                     <p class="aboutEngine">
-                        Для использования класса, создайте новый эказемпляр (<code>Dialog dialog = Dialog(String herosay, Bench[] benches)</code>). <br> Bench - это класс, для работы с ветками диалога и создается эказемпляр таким оброзом ( <code>new Bench (String playersay, Dialog dialog) </code>). <br> А для окончания диалога создайте экземпляр диалона с такими параметрами (<code>Dialog(Int id, Runnable runnable)</code>)
+                        Для использования класса, создайте новый эказемпляр (<code>Dialog dialog = Dialog(String herosay, Bench[] benches)</code>). <br> Bench - это класс для работы с ветками диалогов, что создает эказемпляр таким образом: ( <code>new Bench (String playersay, Dialog dialog) </code>). <br> Для окончания диалога создайте экземпляр диалога с такими параметрами: (<code>Dialog(Int id, Runnable runnable)</code>)
                     </p>
                     <p class="aboutEngine">
                         Пример:
                         <div class="code">
-                            static Dialog dialog = new Dialog("Привет я нечто то заспавнит моба. Хочешь?", new Bench[]{ <br>
+                            static Dialog dialog = new Dialog("Привет, я нечто то, что спавнит мобов. Оно тебе нужно?", new Bench[]{ <br>
                                 &nbsp;new Bench("Да",<br>
                                 &nbsp;&nbsp;new Dialog(1, (Serializable & Runnable) ()->{ <br>
                                     &nbsp;&nbsp;&nbsp;yes(); <br>

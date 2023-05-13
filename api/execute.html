@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://hoprik.github.io/MiroDocumentation/style.css">
-    <title>Document</title>
+    <title>Executer</title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
         </div>
         <div class="main">
                 <h1 class="mainHEAD">Executer</h1>
-                <p class="aboutEngine">Executer, ExecuterButton классы для работы с кодом, задержки. Создается при добавление кода в таск систему. Таск система - список кода которых надо сделать. И добовление в ние осуществляется при использований функций add. Все методы через которые можно добавить код в таск ситстему:
+                <p class="aboutEngine">Executer, ExecuterButton - классы для работы с кодом, задержками. Создается при добавлении кода в таск систему. Таск система - список кода, который нужно выполнить. И добавление в неё осуществляется при использований функций add. Все методы через которые можно добавить код в таск систему:
                     <ul class="aboutWhatDoingEngine">
                         <p class="aboutEngine">Класс Execter</p> 
                         <li>addNullTask(int millisecond) - добавляет задержку без кода в список выполнения</li>
@@ -43,15 +43,15 @@
                         <li>addS(Runnable func, int second) - добавляет код в список выполнения</li>
                     </ul>
                     <ul class="aboutWhatDoingEngine">
-                        <p class="aboutEngine">Класс ExecuterButton</p> 
+                        <p class="aboutEngine">Класс ExecuterButton:</p> 
                         <li>add(Runnable func) - добавляет код в список выполнения</li>
                     </ul>
                     <p class="aboutEngine">
-                        Для работы с классом вам нужно
+                        Для работы с классом вам нужно:
                         <ul class="aboutWhatDoingEngine">
                             <li>Создать его эказемпляр (<code>Executer exec = new Executer()</code> или <code>ExecuterButton exec = new ExecuterButton()</code>)</li>
-                            <li>Добавте код в таск систему</li>
-                            <li>и запустите код через <code> executer.exec()</code></li>
+                            <li>Добавьте код в таск систему</li>
+                            <li>Запустите код через <code> executer.exec()</code></li>
                         </ul>
                     </p>
                     <p>

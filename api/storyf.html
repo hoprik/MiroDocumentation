@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://hoprik.github.io/MiroDocumentation/style.css">
-    <title>Document</title>
+        <link rel="stylesheet" href="../style.css">
+    <title>Story Functions</title>
 </head>
 
 <body>
@@ -34,21 +34,21 @@
         <div class="main">
                 <h1 class="mainHEAD">Hero</h1>
                 <p class="aboutEngine">
-                    StoryFunction - статический класс (т.е не надо инцалировать), В нем находятся маленькие функции:
+                    StoryFunction - статический класс(то есть не нужно инициализировать). В нем находятся маленькие функции:
                     <ul class="aboutWhatDoingEngine">
-                        <li>message(Player (PlayerEntity - 1.16.5) player, String hero, String text) - функция для отправки сообщение каждому игроку сервера</li>
-                        <li>messageFromFirstPlayer(Player (PlayerEntity - 1.16.5) player, String hero, String text) - функция для отправки сообщение только одному игроку</li>
+                        <li>message(Player (PlayerEntity - 1.16.5) player, String hero, String text) - функция для отправки сообщений каждому игроку нп сервере</li>
+                        <li>messageFromFirstPlayer(Player (PlayerEntity - 1.16.5) player, String hero, String text) - функция для отправки сообщений только одному игроку</li>
                         <li>unlockRecipe(Player (PlayerEntity - 1.16.5) player, String nameCraft) - функция для разблокировки крафта</li>
-                        <li>teleportEntityAll(Player (PlayerEntity - 1.16.5) player, Vector3D vector3d) - функция для создание перехода между локациями</li>
+                        <li>teleportEntityAll(Player (PlayerEntity - 1.16.5) player, Vector3D vector3d) - функция для создания перехода между локациями</li>
                     </ul>
                     <p class="aboutEngine">
-                        Для использования класса просто вызовите класс и используйте функции из класса.
+                        Для использования класса просто вызовите нго и используйте функции из класса.
                     </p>
                     <p class="aboutEngine">
                         Пример:
                         <div class="code">
                             StoryFunction.message(player, "Хай", "Кай")<br>
-                            StoryFunction.messageFromFirstPlayer(player, "Система а4", "Я только в твоей голове")<br>
+                            StoryFunction.messageFromFirstPlayer(player, "Система А4", "Я только в твоей голове")<br>
                             StoryFunction.unlockRecipe(player, "minecraft:diamond_pickaxe")<br>
                             StoryFunction.unlockRecipe(player, new Vector3D(66,66,66))<br>
                         </div>  

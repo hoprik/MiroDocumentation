@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://hoprik.github.io/MiroDocumentation/style.css">
-    <title>Document</title>
+    <title>Hero</title>
 </head>
 
 <body>
@@ -36,24 +36,26 @@
                 <p class="aboutEngine">
                     Hero - класс для работы с любыми мобами майнкрафт, даже из модов. В него строины функции.
                     <ul class="aboutWhatDoingEngine">
-                        <li>setName(String name) - установка имени при сообщении персонажа</li>
+                        <li>setName(String name) - установка имени персонажа при отправке сообщения</li>
                         <li>getName() - получение имени персонажа</li>
                         <li>mobSay(String text, Player (PlayerEntity - если 1.16.5) player) - отправка сообщения игрокам</li>
                         <li>rotate(int yaw) - вращение персонажа</li>
                         <li>moveEntity(Vector3D vector3d, int speed) - перемещение персонажа</li>
                         <li>stopMoveEntity() - остановка персонажа</li>
-                        <li>setEmote(String emote) - установка эмоции персонажа (если токова имеется)</li>
-                        <li>setAnimation(String animation) - установка анимациия персонажа (если токова имеется)</li>
+                        <li>setEmote(String emote) - установка эмоции персонажа(если такие имеются)</li>
+                        <li>setAnimation(String animation) - установка анимации персонажа(если такие имеются)</li>
                     </ul>
                     <p class="aboutEngine">
-                        Для использования класса просто создайте эказемпляр ( <code>Hero hero = new Hero (new ZombieEntity(EntityTypes.ZOMBIE, level (world - 1.16.5), new BlockPos(x,y,z)))</code> ) и используйте функции из класса.
+                        Для использования класса просто создайте экземпляр ( <code>Hero hero = new Hero (new ZombieEntity(EntityTypes.ZOMBIE, level (world - 1.16.5), new BlockPos(x,y,z)))</code> ) и используйте функции из класса.
                     </p>
                     <p class="aboutEngine">
                         Пример:
-                        <div class="code">
-                            Hero hero = new Hero(new NpcEntity(InitEntity.HOPRIK.get(), player.level), new BlockPos(0, -60, 0));<br>
-                            hero.moveEntity(new Vector3d(9,-60,9), 0.4F);<br>
-                        </div>  
+                        <pre class="language-java">
+                            <code class="language-java">
+    Hero hero = new Hero(new NpcEntity(InitEntity.HOPRIK.get(), player.level), new BlockPos(0, -60, 0));<br>
+    hero.moveEntity(new Vector3d(9,-60,9), 0.4F);<br>
+                            </code>
+                            </pre>
                 </p>
                 </p>
         </div>
